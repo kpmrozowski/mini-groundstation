@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		"eamodio.gitlens",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode.cpptools",
+        "twxs.cmake",
+        "vscode-icons-team.vscode-icons",
+        // "ms-vscode.cpptools-extension-pack",
+        "ms-azuretools.vscode-docker",
+        "llvm-vs-code-extensions.vscode-clangd"
+	]
+}

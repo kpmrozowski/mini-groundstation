@@ -1,0 +1,6 @@
+#ifndef COLLECT_DATA_NODE_HPP
+#define COLLECT_DATA_NODE_HPP
+
+
+
+#endif // COLLECT_DATA_NODE_HPP

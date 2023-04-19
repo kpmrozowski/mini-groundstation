@@ -1,0 +1,52 @@
+{
+	"dockerFile": "Dockerfile",
+	"build": {
+		"args": {
+			"WORKSPACE": "${containerWorkspaceFolder}",
+			"ONBOARD_SDK_VERSION": "4.0.1", // '4.1.0' '4.0.1' '4.0.0'
+			"MASTER_URI": "http://192.168.43.144:11311",
+			"ROS_IP": "192.168.43.214"
+		}
+	},
+	"remoteUser": "ground",
+	"runArgs": [
+		"--network=host",
+		"--privileged",
+		"--gpus=all",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt=seccomp:unconfined",
+		"--security-opt=apparmor:unconfined",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/dev:/dev",
+		"--volume=/home/kmro/Documents/praca/INKUB/:/home/ground/repos"
+	],
+	"containerEnv": {
+		"NVIDIA_DRIVER_CAPABILITIES": "all",
+		"NVIDIA_VISIBLE_DEVICES": "all",
+		"QT_X11_NO_MITSHM": "1",
+		"DISPLAY": ":1",
+		"LIBGL_ALWAYS_INDIRECT": "0",
+		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+	},
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"extensions": [
+		"dotjoshjohnson.xml",
+		"ms-azuretools.vscode-docker",
+		"ms-python.python",
+		"ms-iot.vscode-ros",
+		"llvm-vs-code-extensions.vscode-clangd",
+      	"xaver.clang-format",
+		"redhat.vscode-yaml",
+		"smilerobotics.urdf",
+		"streetsidesoftware.code-spell-checker",
+		"twxs.cmake",
+		"yzhang.markdown-all-in-one"
+	]
+}

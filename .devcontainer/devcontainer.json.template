@@ -1,0 +1,55 @@
+{
+	"dockerFile": "Dockerfile",
+	"build": {
+		"args": {
+			"WORKSPACE": "${containerWorkspaceFolder}"
+		}
+	},
+	"remoteUser": "frankaemika",
+	"runArgs": [
+		"--network=host",
+		"--privileged",
+		"--gpus=all",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt=seccomp:unconfined",
+		"--security-opt=apparmor:unconfined",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/dev:/dev",
+		"--volume=/home/kmro/Sam/RBS:/home/frankaemika/Develop/RBS",
+		"--volume=/home/kmro/Sam/RBS-API:/home/frankaemika/Develop/RBS-API",
+		"--volume=/home/kmro/Sam/RobotSystemNY:/home/frankaemika/Develop/RobotSystemNY",
+		"--volume=/home/kmro/Sam/MASS:/home/frankaemika/Develop/MASS",
+		"--volume=/home/kmro/Sam/scripts:/home/frankaemika/Develop/scripts",
+		"--volume=/home/kmro/Sam/fork:/home/frankaemika/Develop/fork",
+		"--volume=/home/kmro/Sam/smapper:/home/frankaemika/Develop/smapper"
+	],
+	"containerEnv": {
+		"NVIDIA_DRIVER_CAPABILITIES": "all",
+		"NVIDIA_VISIBLE_DEVICES": "all",
+		"QT_X11_NO_MITSHM": "1",
+		"DISPLAY": "${localEnv:DISPLAY}",
+		"LIBGL_ALWAYS_INDIRECT": "0",
+		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+	},
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"extensions": [
+		"dotjoshjohnson.xml",
+		"ms-azuretools.vscode-docker",
+		"ms-python.python",
+		"ms-iot.vscode-ros",
+		"llvm-vs-code-extensions.vscode-clangd",
+      	"xaver.clang-format",
+		"redhat.vscode-yaml",
+		"smilerobotics.urdf",
+		"streetsidesoftware.code-spell-checker",
+		"twxs.cmake",
+		"yzhang.markdown-all-in-one"
+	]
+}
